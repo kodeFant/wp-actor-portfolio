@@ -1,0 +1,105 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.btn {
+  margin: 5px;
+  margin-top: 10px;
+  background-color: rgb(238, 238, 238);
+  color: black;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-instagram:hover {
+  background-color: #d6249f;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+.btn-linkedin:hover {
+  background-color: #0077b5;
+  color: white;
+}
+
+.btn-kontakt:hover {
+  background-color: rgb(218, 208, 77);
+  color: black;
+}
+
+.header {
+  background-color: rgb(71, 0, 73);
+  background: url(headshot.jpg) center;
+  height: 95vh;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+.header-content {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header-name {
+  color: #fff;
+  font-family: Monoton;
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
+
+  font-size: 4em;
+  display: inline;
+  position: relative;
+}
+
+.header-name:hover {
+  color: #ff1177;
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177,
+      0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177,
+      0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
+  }
+}
+
+.header-subtitle {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.social-media-buttons {
+  margin-top: 50px;
+}
+
+nav {
+  height: 5vh;
+}
+
+::selection {
+  background-color: rgba(177, 84, 180, 0.486);
+}
+
+input {
+  display: block;
+}
