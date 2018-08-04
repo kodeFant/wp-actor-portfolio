@@ -1,0 +1,53 @@
+// Variables
+$neon-pink: #ff1177;
+$beige: #d0ba8e;
+$purple: #b483e2;
+@import 'reset';
+@import 'breakpoints';
+@import 'button';
+@import 'header';
+@import 'nav';
+@import 'footer';
+@import 'form';
+@import 'reel';
+@import 'section';
+@import 'section__about';
+@import 'section__reel';
+@import 'section__gallery';
+@import 'section__resume';
+@import 'gallery';
+a {
+  color: $neon-pink;
+  text-decoration: none;
+  &:hover {
+    color: $purple;
+  }
+}
+
+p {
+  font-weight: 300;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  display: grid;
+}
+
+nav {
+  height: 5vh;
+}
+
+::selection {
+  background-color: rgba(177, 84, 180, 0.486);
+}
+
+input {
+  display: block;
+}
+
+.italic {
+  font-style: italic;
+}

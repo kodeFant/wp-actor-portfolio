@@ -1,0 +1,9 @@
+#resume {
+  .section-header {
+    background: center / cover url(../images/resume.jpg);
+    background-color: #ccc;
+    @include for-size(tablet-portrait-up) {
+      background-attachment: fixed;
+    }
+  }
+}

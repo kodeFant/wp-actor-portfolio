@@ -1,0 +1,25 @@
+#gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  p {
+    text-align: center;
+  }
+}
+
+.img-showcase {
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 62rem;
+  img:hover {
+    filter: grayscale(50%);
+  }
+  @include for-size(tablet-portrait-up) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include for-size(tablet-landscape-up) {
+    width: 80%;
+  }
+}

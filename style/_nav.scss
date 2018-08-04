@@ -1,0 +1,80 @@
+.backdrop {
+  display: none;
+  z-index: 50;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.mobile-nav {
+  display: flex;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 85%;
+  height: 100%;
+  z-index: 100;
+  background-color: #d0ba8e;
+  p {
+    font-size: 1.2rem;
+    padding-top: 0.6rem;
+  }
+  .brand {
+    text-align: center;
+    color: #fff;
+    font-family: Monoton;
+    font-size: 2.7em;
+    display: inline;
+    position: relative;
+    color: $neon-pink;
+    &:hover {
+      color: $neon-pink;
+    }
+  }
+  .mobile-menu {
+    margin-top: 3rem;
+    font-weight: bold;
+    text-align: center;
+    a {
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 3rem;
+      color: #333;
+      &:hover {
+        color: $neon-pink;
+      }
+    }
+  }
+}
+
+.mobile-menu-bar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  z-index: 49;
+  background-color: #d0ba8e;
+  color: #333;
+  padding: 0.8rem;
+  .mobile-brand {
+    color: #ccc;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: rgb(37, 37, 37);
+  }
+}
+
+.mobile-menu-button {
+  color: #333;
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 1.5rem;
+}

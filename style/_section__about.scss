@@ -1,0 +1,9 @@
+#about {
+  .section-header {
+    background: center / cover url(../images/about.jpg);
+    background-color: #ccc;
+    @include for-size(tablet-portrait-up) {
+      background-attachment: fixed;
+    }
+  }
+}

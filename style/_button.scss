@@ -1,0 +1,55 @@
+.btn {
+  margin: 5px;
+  margin-top: 10px;
+  background-color: rgb(238, 238, 238);
+  color: black;
+  padding: 13px 30px;
+  /* padding: 13px 25px 13px 50px; */
+  border-radius: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+  text-align: center;
+}
+
+.btn-instagram:hover {
+  background-color: #d6249f;
+  color: white;
+}
+
+.btn-linkedin:hover {
+  background-color: #0077b5;
+  color: white;
+}
+
+.btn-kontakt:hover {
+  background-color: rgb(218, 208, 77);
+  background-color: $beige;
+  color: black;
+}
+
+.btn-form {
+  background-color: rgb(253, 246, 143);
+  font: inherit;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  justify-self: center;
+  border: none;
+  &:hover {
+    background: rgb(255, 246, 118);
+  }
+}
+
+a.btn.mobile {
+  background: none;
+  margin: 0.5rem;
+  padding: 0;
+  color: #555;
+  &:hover,
+  &:active {
+    color: $neon-pink;
+    box-shadow: none;
+  }
+}
