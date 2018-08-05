@@ -1,26 +1,23 @@
 #reel {
   display: flex;
   flex-direction: column;
+  background: rgba(0, 0, 0, 0.836);
+  @include for-size(tablet-landscape-up) {
+    padding-bottom: 0;
+  }
   p {
     text-align: center;
   }
   .section-header {
     background: center / cover url(../images/reel.jpg);
     background-color: #ccc;
-    @include for-size(tablet-portrait-up) {
-      background-attachment: fixed;
-    }
   }
   .showreel {
     padding: 56.25% 0 0 0;
     position: relative;
     margin-top: 3rem;
-    @include for-size(tablet-portrait-up) {
-      position: relative;
-      align-self: center;
-      padding: 0;
-      height: 360px;
-      width: 640px;
+    @include for-size(tablet-landscape-up) {
+      margin-top: 0;
     }
   }
 }

@@ -2,6 +2,7 @@
 $neon-pink: #ff1177;
 $beige: #d0ba8e;
 $purple: #b483e2;
+$sidebar-width: 20rem;
 @import 'reset';
 @import 'breakpoints';
 @import 'button';
@@ -12,6 +13,7 @@ $purple: #b483e2;
 @import 'reel';
 @import 'section';
 @import 'section__about';
+@import 'section__contact';
 @import 'section__reel';
 @import 'section__gallery';
 @import 'section__resume';
@@ -30,10 +32,35 @@ p {
 
 body {
   font-family: "Roboto", sans-serif;
+  display: grid;
+  grid-template-areas: "header" "main" "footer" "menu-bar";
+  @include for-size(tablet-landscape-up) {
+    grid-template-columns: auto $sidebar-width;
+    grid-template-areas: "header header" "main menu" "footer footer";
+  }
+}
+
+header {
+  grid-area: header;
 }
 
 main {
-  display: grid;
+  display: block;
+  grid-area: main;
+  @include for-size(tablet-landscape-up) {
+    width: calc(100vw - #{$sidebar-width});
+  }
+}
+
+footer {
+  grid-area: footer;
+}
+
+.mobile-menu-bar {
+  grid-area: menu-bar;
+  @include for-size(tablet-landscape-up) {
+    display: none;
+  }
 }
 
 nav {
@@ -50,4 +77,27 @@ input {
 
 .italic {
   font-style: italic;
+}
+
+// Hidden styles
+.hidden {
+  @include for-size(tablet-landscape-down) {
+    display: none;
+  }
+}
+
+.backdrop.hidden {
+  display: none;
+}
+
+#about,
+#contact,
+#gallery,
+#reel,
+#resume {
+  .section-header {
+    @include for-size(tablet-landscape-up) {
+      background-attachment: fixed;
+    }
+  }
 }

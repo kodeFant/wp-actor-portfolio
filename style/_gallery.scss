@@ -16,7 +16,7 @@
   img:hover {
     filter: grayscale(50%);
   }
-  @include for-size(tablet-portrait-up) {
+  @include for-size(tablet-landscape-up) {
     grid-template-columns: repeat(3, 1fr);
   }
   @include for-size(tablet-landscape-up) {

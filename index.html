@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#d0ba8e" />
   <title>Skuespiller - Regissør | Ragnhild Gravem</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
     crossorigin="anonymous">
@@ -15,7 +16,7 @@
 </head>
 
 <body>
-  <div class="backdrop"></div>
+  <div class="backdrop hidden"></div>
   <nav class="mobile-menu-bar">
     <span class="mobile-brand">
       <a class="btn btn-instagram mobile" href="https://www.instagram.com/ragnhildgravem/" target="_blank">
@@ -33,7 +34,7 @@
       <i class="fas fa-bars"></i>
     </div>
   </nav>
-  <div class="header">
+  <header class="header">
     <div class="header-content">
       <span class="header-name"> Ragnhild
         <br>Gravem</span>
@@ -47,13 +48,13 @@
           <i class="fas fa-at"></i> Kontakt</a>
       </div>
     </div>
-  </div>
-  <nav class="mobile-nav">
+  </header>
+  <nav class="mobile-nav hidden">
     <div class="brand">
       <a href="#"> Ragnhild
         <br> Gravem</a>
     </div>
-    <p>Skuespiller - Regissør</p>
+    <p class="brand-sub">Skuespiller - Regissør</p>
     <ul class="mobile-menu">
       <li>
         <a href="#reel">Showreel</a>
@@ -70,14 +71,15 @@
       <li>
         <a href="#contact">Kontakt</a>
       </li>
-      <p>Følg meg:</p>
-      <a class="btn btn-instagram mobile" href="https://www.instagram.com/ragnhildgravem/" target="_blank">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a class="btn btn-linkedin mobile" href="https://www.linkedin.com/in/ragnhild-gravem-725b6a18/" target="_blank">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <!--       <a class="btn btn-kontakt mobile" href="#contact">
+      <span class="nav__social-media">
+        <p>Følg meg:</p>
+        <a class="btn btn-instagram mobile" href="https://www.instagram.com/ragnhildgravem/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a class="btn btn-linkedin mobile" href="https://www.linkedin.com/in/ragnhild-gravem-725b6a18/" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <!--       <a class="btn btn-kontakt mobile" href="#contact">
         <i class="fas fa-at"></i>
       </a> -->
       </span>
@@ -99,13 +101,21 @@
 
     <section id="about">
       <div class="section-header">
-        <h2>Om Ragnhild Gravem</h2>
+        <h2>Ragnhild Gravem</h2>
       </div>
-
-      <p>Quo ut non molestiae quo facilis eum quo quam molestiae. Quae nam totam aspernatur molestiae et sunt quos. Saepe vitae
-        voluptatem et. Aspernatur voluptates autem qui. Quidem pariatur est.</p>
-      <p>Consequatur impedit non perspiciatis cum adipisci occaecati sed. Ut rerum libero. Quis recusandae cumque et voluptatibus
-        autem aspernatur. Quia eum molestiae. Exercitationem iure eligendi.</p>
+      <div class="about-content">
+        <div class="about-img"></div>
+        <div class="about-text">
+          <ul>
+            <li>Navn: Ragnhild Gravem</li>
+            <li>Høyde: 159 cm</li>
+          </ul>
+          <p>Quo ut non molestiae quo facilis eum quo quam molestiae. Quae nam totam aspernatur molestiae et sunt quos. Saepe
+            vitae voluptatem et. Aspernatur voluptates autem qui. Quidem pariatur est.</p>
+          <p>Consequatur impedit non perspiciatis cum adipisci occaecati sed. Ut rerum libero. Quis recusandae cumque et voluptatibus
+            autem aspernatur. Quia eum molestiae. Exercitationem iure eligendi.</p>
+        </div>
+      </div>
     </section>
 
     <section id="gallery">
@@ -128,35 +138,130 @@
     <section id="resume">
       <div class="section-header">
         <h2>CV</h2>
-
       </div>
+      <table>
+        <thead>
+          <tr>
+            <td colspan="5" class="table-header">Film</td>
+          </tr>
+          <tr>
+            <th>Tittel</th>
+            <th>Rolle</th>
+            <th>År</th>
+            <th>Regi</th>
+            <th>Produsent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Flukten fra Flekkefjord</td>
+            <td>Bi</td>
+            <td>2016</td>
+            <td>Ulf Harry</td>
+            <td>Kåre Bjarne</td>
+          </tr>
+          <tr>
+            <td>Tilbake til Flekkefjord</td>
+            <td>Hoved</td>
+            <td>2016</td>
+            <td>Greta Ofstad</td>
+            <td>Rolf Anker-Hansen</td>
+          </tr>
+          <tr>
+            <td>Ondskapens vandrerhjem</td>
+            <td>Bi</td>
+            <td>2016</td>
+            <td>Per-Morten Boe</td>
+            <td>Kåre Bjarne</td>
+          </tr>
+          <tr>
+            <td>The broken back</td>
+            <td>Bi</td>
+            <td>2016</td>
+            <td>Benny Oscarsen</td>
+            <td>Hans Yamaha</td>
+          </tr>
+          <tr>
+            <td>Den skattefuten peker på</td>
+            <td>Hoved</td>
+            <td>2016</td>
+            <td>Ulf Harry</td>
+            <td>Pelle Kruttlapp</td>
+          </tr>
+          <tr class="table-gap">
+            <td></td>
+          </tr>
+        </tbody>
+
+
+
+        <thead>
+          <tr>
+            <td colspan="5" class="table-header">Teater</td>
+          </tr>
+          <tr>
+            <th>Tittel</th>
+            <th>Rolle</th>
+            <th>År</th>
+            <th>Regi</th>
+            <th>Produsent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Flukten</td>
+            <td>Bi</td>
+            <td>2016</td>
+            <td>Per-Morten Boe</td>
+            <td>Kåre Bjarne</td>
+          </tr>
+          <tr>
+            <td>Flukten</td>
+            <td>Bi</td>
+            <td>2016</td>
+            <td>Ulf Harry</td>
+            <td>Kåre Bjarne</td>
+          </tr>
+          <tr>
+            <td>Flukten</td>
+            <td>Hoved</td>
+            <td>2016</td>
+            <td>Ulf Harry</td>
+            <td>Kåre Bjarne</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
 
 
 
-    <div id="contact">
+    <section id="contact">
       <header>
         <div>
-          <h2>Kontakt</h2>
+          <div class="section-header">
+            <h2>Kontakt</h2>
+          </div>
+
           <p>Ta gjerne kontakt for spørsmål om mine tjenester.</p>
         </div>
       </header>
+      <form class="contact-form">
+        <label for="">Ditt navn:</label>
+        <input type="text">
 
-      <label for="">Ditt navn:</label>
-      <input type="text">
+        <label for="">Epost:</label>
+        <input type="email">
 
-      <label for="">Epost:</label>
-      <input type="email">
+        <label for="">Mobil:</label>
+        <input type="text">
 
-      <label for="">Mobil:</label>
-      <input type="text">
+        <label for="">Din beskjed</label>
+        <textarea name="" id="" cols="15" rows="10"></textarea>
 
-      <label for="">Din beskjed</label>
-      <textarea name="" id="" cols="15" rows="10"></textarea>
-
-      <button class="btn btn-form" type="submit">Send henvendelse</button>
-    </div>
+        <button class="btn btn-form" type="submit">Send henvendelse</button>
+      </form>
+    </section>
   </main>
 
   <footer>&copy; 2018 - Ragnhild Gravem</footer>

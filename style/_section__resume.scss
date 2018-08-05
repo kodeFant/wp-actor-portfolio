@@ -1,9 +1,54 @@
 #resume {
+  display: flex;
+  flex-direction: column;
   .section-header {
     background: center / cover url(../images/resume.jpg);
     background-color: #ccc;
-    @include for-size(tablet-portrait-up) {
-      background-attachment: fixed;
+    margin-bottom: 3rem;
+  }
+  table {
+    width: 100%;
+    text-align: left;
+    @include for-size(tablet-landscape-up) {
+      align-self: center;
+      max-width: 60rem;
     }
+    thead {
+      tr:nth-child(2) {
+        background-color: rgb(216, 183, 183);
+        color: #333;
+        font-weight: 700;
+        padding: 1rem 1rem;
+      }
+    }
+    tbody tr:nth-child(odd) {
+      background-color: rgb(242, 242, 250);
+    }
+    tbody tr:hover:not(.table-gap) {
+      background: rgba($purple, 0.4);
+    }
+    td,
+    th {
+      padding: 0.5rem 0;
+    }
+    tr td:nth-child(4),
+    tr td:nth-child(5),
+    tr th:nth-child(4),
+    tr th:nth-child(5) {
+      @include for-size(phone-only) {
+        display: none;
+      }
+    }
+  }
+  .table-header {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    background-color: rgb(182, 93, 93);
+    text-align: center;
+    color: white;
+    font-weight: 700;
+  }
+  .table-gap td {
+    height: 1.5rem;
   }
 }

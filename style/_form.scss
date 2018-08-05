@@ -1,59 +1,58 @@
 #contact {
-  display: grid;
-  grid-gap: 1.5rem;
   text-align: center;
-  header {
-    padding-top: 50px;
-    padding-bottom: 25px;
-    background-color: rgb(218, 208, 77);
+  h2 {
     position: relative;
-    &:before {
-      position: absolute;
-      color: rgba(255, 255, 255, 0.205);
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      font-size: 16rem;
-      top: -2rem;
-      left: -2rem;
-      content: "\f1fa";
-      z-index: 1;
-    }
-    h2 {
-      position: relative;
-      font-weight: bold;
-      z-index: 10;
-    }
-    p {
-      position: relative;
-      text-align: center;
-      padding: 20px 10px;
-      line-height: 1.5rem;
-      z-index: 10;
-    }
-  }
-  label {
     font-weight: bold;
+    z-index: 10;
   }
-  input {
+  p {
+    position: relative;
     text-align: center;
+    padding: 20px 10px;
+    line-height: 1.5rem;
+    z-index: 10;
   }
-  textarea {
-    height: 5rem;
+}
+
+.contact-form {
+  display: grid;
+  grid-gap: 1rem;
+  @include for-size(tablet-landscape-up) {
+    grid-template-columns: 1fr 2fr;
   }
-  input,
-  textarea {
-    background: rgb(243, 243, 243);
-    border: 1px solid rgb(187, 187, 187);
-    border-radius: 5px;
-    justify-self: center;
-    width: 90%;
-    outline: none;
-    font: inherit;
-    font-size: 1.2rem;
-    padding: 0.5rem;
-    &:focus {
-      background: rgb(213, 247, 211);
-      border: none;
-    }
+}
+
+label {
+  font-weight: bold;
+  @include for-size(tablet-landscape-up) {
+    text-align: right;
+  }
+}
+
+input {
+  text-align: center;
+}
+
+textarea {
+  height: 5rem;
+}
+
+input,
+textarea {
+  background: rgb(243, 243, 243);
+  border: 1px solid rgb(187, 187, 187);
+  border-radius: 5px;
+  justify-self: center;
+  width: 90%;
+  outline: none;
+  font: inherit;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  &:focus {
+    background: rgb(213, 247, 211);
+    border: none;
+  }
+  @include for-size(tablet-landscape-up) {
+    max-width: 20rem;
   }
 }

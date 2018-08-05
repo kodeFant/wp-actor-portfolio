@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -201,6 +200,12 @@ a.btn.mobile:hover, a.btn.mobile:active {
   justify-content: center;
   margin-bottom: 7rem;
 }
+@media (min-width: 900px) {
+  .header {
+    height: 100vh;
+    width: calc(100vw - 20rem);
+  }
+}
 
 .header-name {
   color: #fff;
@@ -212,7 +217,7 @@ a.btn.mobile:hover, a.btn.mobile:active {
   display: inline;
   position: relative;
 }
-@media (min-width: 600px) {
+@media (min-width: 900px) {
   .header-name {
     font-size: 4em;
   }
@@ -253,17 +258,20 @@ a.btn.mobile:hover, a.btn.mobile:active {
 }
 
 .backdrop {
-  display: none;
   z-index: 50;
   height: 100vh;
   width: 100%;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.8);
 }
+@media (min-width: 900px) {
+  .backdrop {
+    display: none;
+  }
+}
 
 .mobile-nav {
   display: flex;
-  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -271,9 +279,16 @@ a.btn.mobile:hover, a.btn.mobile:active {
   top: 0;
   right: 0;
   width: 85%;
+  max-width: 20rem;
   height: 100%;
   z-index: 100;
   background-color: #d0ba8e;
+}
+@media (min-width: 900px) {
+  .mobile-nav {
+    grid-area: menu;
+    width: 20rem;
+  }
 }
 .mobile-nav p {
   font-size: 1.2rem;
@@ -288,13 +303,36 @@ a.btn.mobile:hover, a.btn.mobile:active {
   position: relative;
   color: #ff1177;
 }
+@media (max-height: 499px) {
+  .mobile-nav .brand a {
+    display: none;
+  }
+}
 .mobile-nav .brand:hover {
   color: #ff1177;
+}
+@media (max-height: 499px) {
+  .mobile-nav .brand-sub {
+    display: none;
+  }
+}
+@media (max-height: 499px) {
+  .mobile-nav .nav__social-media {
+    display: none;
+  }
+}
+.mobile-nav .nav__social-media p {
+  margin-top: 1.1rem;
 }
 .mobile-nav .mobile-menu {
   margin-top: 3rem;
   font-weight: bold;
   text-align: center;
+}
+@media (max-height: 499px) {
+  .mobile-nav .mobile-menu {
+    margin-top: 0;
+  }
 }
 .mobile-nav .mobile-menu a {
   text-decoration: none;
@@ -318,6 +356,7 @@ a.btn.mobile:hover, a.btn.mobile:active {
   background-color: #d0ba8e;
   color: #333;
   padding: 0.8rem;
+  box-shadow: 0px -0.5px 5px 0px rgba(0, 0, 0, 0.75);
 }
 .mobile-menu-bar .mobile-brand {
   color: #ccc;
@@ -340,52 +379,57 @@ footer {
   padding: 1rem;
   margin-top: 1rem;
 }
+@media (min-width: 900px) {
+  footer {
+    width: calc(100vw - 20rem);
+  }
+}
 
 #contact {
-  display: grid;
-  grid-gap: 1.5rem;
   text-align: center;
 }
-#contact header {
-  padding-top: 50px;
-  padding-bottom: 25px;
-  background-color: #dad04d;
-  position: relative;
-}
-#contact header:before {
-  position: absolute;
-  color: rgba(255, 255, 255, 0.205);
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  font-size: 16rem;
-  top: -2rem;
-  left: -2rem;
-  content: "";
-  z-index: 1;
-}
-#contact header h2 {
+#contact h2 {
   position: relative;
   font-weight: bold;
   z-index: 10;
 }
-#contact header p {
+#contact p {
   position: relative;
   text-align: center;
   padding: 20px 10px;
   line-height: 1.5rem;
   z-index: 10;
 }
-#contact label {
+
+.contact-form {
+  display: grid;
+  grid-gap: 1rem;
+}
+@media (min-width: 900px) {
+  .contact-form {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+label {
   font-weight: bold;
 }
-#contact input {
+@media (min-width: 900px) {
+  label {
+    text-align: right;
+  }
+}
+
+input {
   text-align: center;
 }
-#contact textarea {
+
+textarea {
   height: 5rem;
 }
-#contact input,
-#contact textarea {
+
+input,
+textarea {
   background: #f3f3f3;
   border: 1px solid #bbbbbb;
   border-radius: 5px;
@@ -396,10 +440,16 @@ footer {
   font-size: 1.2rem;
   padding: 0.5rem;
 }
-#contact input:focus,
-#contact textarea:focus {
+input:focus,
+textarea:focus {
   background: #d5f7d3;
   border: none;
+}
+@media (min-width: 900px) {
+  input,
+textarea {
+    max-width: 20rem;
+  }
 }
 
 .reel {
@@ -422,10 +472,10 @@ section h2 {
   font-size: 3rem;
   font-weight: 700;
   display: block;
-  background: rgba(58, 28, 58, 0.781);
+  background: rgba(208, 186, 142, 0.5);
   color: white;
 }
-@media (min-width: 600px) {
+@media (min-width: 900px) {
   section h2 {
     padding: 3rem 1rem;
   }
@@ -434,19 +484,41 @@ section p {
   margin: 2rem 1rem;
 }
 
+#about {
+  padding-bottom: 0;
+}
+#about .about-content {
+  display: grid;
+  grid-auto-columns: 1fr 1fr;
+  grid-template-areas: "about-img about-text";
+}
 #about .section-header {
   background: center/cover url(../images/about.jpg);
   background-color: #ccc;
 }
-@media (min-width: 600px) {
-  #about .section-header {
-    background-attachment: fixed;
-  }
+#about .about-img {
+  background: url(/images/ragnhild-hoyde.jpg) no-repeat center/cover;
+  height: 80vh;
+  grid-area: about-img;
+}
+#about .about-text {
+  grid-area: about-text;
+}
+
+#contact .section-header {
+  background: center/cover url(../images/contact.jpg);
+  background-color: #ccc;
 }
 
 #reel {
   display: flex;
   flex-direction: column;
+  background: rgba(0, 0, 0, 0.836);
+}
+@media (min-width: 900px) {
+  #reel {
+    padding-bottom: 0;
+  }
 }
 #reel p {
   text-align: center;
@@ -455,23 +527,14 @@ section p {
   background: center/cover url(../images/reel.jpg);
   background-color: #ccc;
 }
-@media (min-width: 600px) {
-  #reel .section-header {
-    background-attachment: fixed;
-  }
-}
 #reel .showreel {
   padding: 56.25% 0 0 0;
   position: relative;
   margin-top: 3rem;
 }
-@media (min-width: 600px) {
+@media (min-width: 900px) {
   #reel .showreel {
-    position: relative;
-    align-self: center;
-    padding: 0;
-    height: 360px;
-    width: 640px;
+    margin-top: 0;
   }
 }
 
@@ -479,20 +542,60 @@ section p {
   background: center/cover url(../images/gallery.jpg);
   background-color: #ccc;
 }
-@media (min-width: 600px) {
-  #gallery .section-header {
-    background-attachment: fixed;
-  }
-}
 
+#resume {
+  display: flex;
+  flex-direction: column;
+}
 #resume .section-header {
   background: center/cover url(../images/resume.jpg);
   background-color: #ccc;
+  margin-bottom: 3rem;
 }
-@media (min-width: 600px) {
-  #resume .section-header {
-    background-attachment: fixed;
+#resume table {
+  width: 100%;
+  text-align: left;
+}
+@media (min-width: 900px) {
+  #resume table {
+    align-self: center;
+    max-width: 60rem;
   }
+}
+#resume table thead tr:nth-child(2) {
+  background-color: #d8b7b7;
+  color: #333;
+  font-weight: 700;
+  padding: 1rem 1rem;
+}
+#resume table tbody tr:nth-child(odd) {
+  background-color: #f2f2fa;
+}
+#resume table tbody tr:hover:not(.table-gap) {
+  background: rgba(180, 131, 226, 0.4);
+}
+#resume table td,
+#resume table th {
+  padding: 0.5rem 0;
+}
+@media (max-width: 749px) {
+  #resume table tr td:nth-child(4),
+#resume table tr td:nth-child(5),
+#resume table tr th:nth-child(4),
+#resume table tr th:nth-child(5) {
+    display: none;
+  }
+}
+#resume .table-header {
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  background-color: #b65d5d;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+}
+#resume .table-gap td {
+  height: 1.5rem;
 }
 
 #gallery {
@@ -514,7 +617,7 @@ section p {
 .img-showcase img:hover {
   filter: grayscale(50%);
 }
-@media (min-width: 600px) {
+@media (min-width: 900px) {
   .img-showcase {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -539,10 +642,41 @@ p {
 
 body {
   font-family: "Roboto", sans-serif;
+  display: grid;
+  grid-template-areas: "header" "main" "footer" "menu-bar";
+}
+@media (min-width: 900px) {
+  body {
+    grid-template-columns: auto 20rem;
+    grid-template-areas: "header header" "main menu" "footer footer";
+  }
+}
+
+header {
+  grid-area: header;
 }
 
 main {
-  display: grid;
+  display: block;
+  grid-area: main;
+}
+@media (min-width: 900px) {
+  main {
+    width: calc(100vw - 20rem);
+  }
+}
+
+footer {
+  grid-area: footer;
+}
+
+.mobile-menu-bar {
+  grid-area: menu-bar;
+}
+@media (min-width: 900px) {
+  .mobile-menu-bar {
+    display: none;
+  }
 }
 
 nav {
@@ -559,6 +693,26 @@ input {
 
 .italic {
   font-style: italic;
+}
+
+@media (max-width: 899px) {
+  .hidden {
+    display: none;
+  }
+}
+
+.backdrop.hidden {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  #about .section-header,
+#contact .section-header,
+#gallery .section-header,
+#reel .section-header,
+#resume .section-header {
+    background-attachment: fixed;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

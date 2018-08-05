@@ -9,6 +9,10 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 7rem;
+  @include for-size(tablet-landscape-up) {
+    height: 100vh;
+    width: calc(100vw - #{$sidebar-width});
+  }
 }
 
 .header-name {
@@ -20,7 +24,7 @@
   font-size: 3em;
   display: inline;
   position: relative;
-  @include for-size(tablet-portrait-up) {
+  @include for-size(tablet-landscape-up) {
     font-size: 4em;
   }
 }

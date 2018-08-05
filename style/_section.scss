@@ -11,9 +11,9 @@ section {
     font-size: 3rem;
     font-weight: 700;
     display: block;
-    background: rgba(58, 28, 58, 0.781);
+    background: rgba($beige, 0.5);
     color: white;
-    @include for-size(tablet-portrait-up) {
+    @include for-size(tablet-landscape-up) {
       padding: 3rem 1rem;
     }
   }

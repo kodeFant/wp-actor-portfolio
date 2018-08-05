@@ -1,11 +1,21 @@
 @mixin for-size($size) {
   @if $size==phone-only {
-    @media (max-width: 599px) {
+    @media (max-width: 749px) {
+      @content;
+    }
+  }
+  @if $size==phone-vertical {
+    @media (max-height: 499px) {
       @content;
     }
   }
   @else if $size==tablet-portrait-up {
-    @media (min-width: 600px) {
+    @media (min-width: 749px) {
+      @content;
+    }
+  }
+  @else if $size==tablet-landscape-down {
+    @media (max-width: 899px) {
       @content;
     }
   }

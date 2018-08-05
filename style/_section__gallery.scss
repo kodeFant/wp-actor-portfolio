@@ -2,8 +2,5 @@
   .section-header {
     background: center / cover url(../images/gallery.jpg);
     background-color: #ccc;
-    @include for-size(tablet-portrait-up) {
-      background-attachment: fixed;
-    }
   }
 }

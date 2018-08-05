@@ -1,9 +1,20 @@
 #about {
+  padding-bottom: 0;
+  .about-content {
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    grid-template-areas: "about-img about-text";
+  }
   .section-header {
     background: center / cover url(../images/about.jpg);
     background-color: #ccc;
-    @include for-size(tablet-portrait-up) {
-      background-attachment: fixed;
-    }
+  }
+  .about-img {
+    background: url(/images/ragnhild-hoyde.jpg) no-repeat center / cover;
+    height: 80vh;
+    grid-area: about-img;
+  }
+  .about-text {
+    grid-area: about-text;
   }
 }
