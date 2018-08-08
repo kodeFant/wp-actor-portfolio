@@ -21,8 +21,11 @@
   max-width: $sidebar-width;
   height: 100%;
   z-index: 100;
-  background-color: #d0ba8e;
+  background-color: $black;
+  transform: translateX(0);
+  transition: transform 0.4s;
   @include for-size(tablet-landscape-up) {
+    transition-property: none;
     grid-area: menu;
     width: $sidebar-width;
   }
@@ -32,22 +35,23 @@
   }
   .brand {
     text-align: center;
-    color: #fff;
+    color: $bright;
     font-family: Monoton;
     font-size: 2.7em;
     display: inline;
     position: relative;
-    color: $neon-pink;
     a {
+      color: $bright;
+      &:hover {
+        color: $neon-pink;
+      }
       @include for-size(phone-vertical) {
         display: none;
       }
     }
-    &:hover {
-      color: $neon-pink;
-    }
   }
   .brand-sub {
+    color: $bright;
     @include for-size(phone-vertical) {
       display: none;
     }
@@ -57,6 +61,7 @@
       display: none;
     }
     p {
+      color: #777;
       margin-top: 1.1rem;
     }
   }
@@ -72,11 +77,18 @@
       font-size: 1.5rem;
       font-weight: 700;
       line-height: 3rem;
-      color: #333;
+      color: $bright;
       &:hover {
         color: $neon-pink;
       }
     }
+  }
+}
+
+.mobile-nav.hidden {
+  display: flex;
+  @include for-size(tablet-landscape-down) {
+    transform: translateX(100%);
   }
 }
 
@@ -88,21 +100,34 @@
   position: fixed;
   bottom: 0;
   z-index: 49;
-  background-color: #d0ba8e;
-  color: #333;
+  background-color: $black;
+  color: $bright;
   padding: 0.8rem;
   box-shadow: 0px -0.5px 5px 0px rgba(0, 0, 0, 0.75);
+  opacity: 1;
+  transition: opacity 0.2s;
   .mobile-brand {
-    color: #ccc;
+    color: $bright;
     font-size: 1.2em;
     font-weight: 400;
-    color: rgb(37, 37, 37);
+  }
+}
+
+.mobile-menu-bar.hidden {
+  @include for-size(tablet-landscape-down) {
+    opacity: 0;
   }
 }
 
 .mobile-menu-button {
-  color: #333;
+  color: $bright;
   font-weight: bold;
-  font-size: 2rem;
-  padding: 1.5rem;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  margin-right: 1.5rem;
+  border-radius: 10%;
+  &:hover,
+  &:active {
+    color: $neon-pink;
+  }
 }

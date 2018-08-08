@@ -2,17 +2,19 @@ section {
   padding: 1rem 0;
   padding-top: 0;
   padding-bottom: 5rem;
+  background: white;
   img {
     width: 100%;
   }
-  h2 {
+  .section-header h2 {
     padding: 6rem 1rem;
     text-align: center;
     font-size: 3rem;
     font-weight: 700;
     display: block;
-    background: rgba($beige, 0.5);
-    color: white;
+    background: rgba($black, 0.7);
+    color: #fff;
+    border-top: 1rem solid $purple;
     @include for-size(tablet-landscape-up) {
       padding: 3rem 1rem;
     }

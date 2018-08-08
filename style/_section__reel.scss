@@ -1,7 +1,5 @@
 #reel {
-  display: flex;
-  flex-direction: column;
-  background: rgba(0, 0, 0, 0.836);
+  background: $black;
   @include for-size(tablet-landscape-up) {
     padding-bottom: 0;
   }
@@ -18,6 +16,13 @@
     margin-top: 3rem;
     @include for-size(tablet-landscape-up) {
       margin-top: 0;
+    }
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   }
 }

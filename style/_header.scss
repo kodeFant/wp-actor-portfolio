@@ -1,17 +1,31 @@
 .header {
-  background-color: rgb(71, 0, 73);
-  background: url(headshot.jpg) center;
+  background-color: $black;
+  background: $black url(/images/ragnhild-bakgrunn.png) bottom left/cover no-repeat;
+  background-attachment: fixed;
   height: 95vh;
   width: 100%;
   color: white;
   text-align: center;
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
-  margin-bottom: 7rem;
+  margin-bottom: 0;
+  padding-top: 1.8rem;
   @include for-size(tablet-landscape-up) {
+    padding-top: 0;
     height: 100vh;
+    width: 100vw;
+    align-items: center;
+    background: $black url(/images/ragnhild-bakgrunn.png) bottom left/80% no-repeat;
+    background-attachment: fixed;
+  }
+  @include for-size(phone-vertical) {
+    justify-content: flex-end;
+    height: 90vh;
+  }
+  @include for-size(mid-break) {
     width: calc(100vw - #{$sidebar-width});
+    justify-content: flex-end;
   }
 }
 
@@ -24,24 +38,28 @@
   font-size: 3em;
   display: inline;
   position: relative;
-  @include for-size(tablet-landscape-up) {
+  -webkit-animation: neon1 2.5s ease-in 1s;
+  -moz-animation: neon1 2.5s ease-in 1s;
+  animation: neon1 2.5s ease-in-out 0.5s;
+  z-index: 20;
+  @include for-size(tablet-portrait-up) {
     font-size: 4em;
   }
 }
 
 .header-name:hover {
-  color: #ff1177;
-  /* -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-  animation: neon1 1.5s ease-in-out infinite alternate; */
+  color: $neon-pink;
 }
 
 @keyframes neon1 {
-  from {
+  0% {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177, 0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177;
   }
-  to {
+  50% {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177, 0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
+  }
+  100% {
+    text-shadow: none;
   }
 }
 

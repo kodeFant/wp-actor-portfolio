@@ -1,20 +1,53 @@
 #about {
   padding-bottom: 0;
   .about-content {
-    display: grid;
-    grid-auto-columns: 1fr 1fr;
-    grid-template-areas: "about-img about-text";
+    overflow: auto;
   }
   .section-header {
     background: center / cover url(../images/about.jpg);
     background-color: #ccc;
   }
   .about-img {
-    background: url(/images/ragnhild-hoyde.jpg) no-repeat center / cover;
-    height: 80vh;
-    grid-area: about-img;
+    border-radius: 50%;
+    width: 100%;
+    max-width: 20rem;
+    @include for-size(tablet-portrait-up) {
+      float: left;
+      shape-outside: circle();
+      margin: 2rem;
+    }
+  }
+  .about-content {
+    margin: 2rem;
+    @include for-size(tablet-portrait-up) {
+      text-align: left;
+    }
   }
   .about-text {
-    grid-area: about-text;
+    padding-top: 3rem;
+  }
+  .cv-link {
+    font-size: 1.3rem;
+  }
+  .about-content h2 {
+    font-size: 2rem;
+    margin: 2rem 1rem;
+    @include for-size(tablet-portrait-up) {
+      text-align: left;
+    }
+  }
+  .video {
+    width: 100%;
+    margin: 2rem 0;
+    padding: 0;
+    iframe {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+    @include for-size(tablet-portrait-up) {
+      margin: 2rem auto;
+      max-width: 720px;
+    }
   }
 }

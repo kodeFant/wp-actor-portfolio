@@ -51,4 +51,18 @@
   .table-gap td {
     height: 1.5rem;
   }
+  .actor-data {
+    margin-bottom: 2rem;
+    th {
+      font-weight: 700;
+    }
+    .actor-data-header {
+      font-size: 1.1rem;
+      padding: 0.5rem 0;
+      background-color: rgb(99, 93, 182);
+      text-align: center;
+      color: white;
+      font-weight: 700;
+    }
+  }
 }

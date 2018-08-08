@@ -34,4 +34,9 @@
       @content;
     }
   }
+  @else if $size==mid-break {
+    @media (min-width: 900px) and (max-width: 1010px) {
+      @content;
+    }
+  }
 }
